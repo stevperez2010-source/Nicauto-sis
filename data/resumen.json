@@ -1,0 +1,31 @@
+{
+  "tablasActuales": {
+    "vehiculos": 46,
+    "clientes": 13,
+    "ventas": 26,
+    "bitacora": 28,
+    "contable": 2,
+    "vehgerencia": 10,
+    "ctrlclientes": 7,
+    "mensajes": 73
+  },
+  "contableRecuperado": {
+    "cuentas": 6,
+    "rendiciones": 8,
+    "movimientos": 82
+  },
+  "desde17": {
+    "vehiculos": 0,
+    "clientes": 0,
+    "ventas": 4,
+    "bitacora": 3,
+    "contable": 2,
+    "vehgerencia": 0,
+    "ctrlclientes": 1,
+    "mensajes": 0,
+    "contable_recuperado": {
+      "cuentas": 1,
+      "rendiciones": 1
+    }
+  }
+}
