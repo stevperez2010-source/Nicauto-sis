@@ -9,7 +9,7 @@ const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const money=v=>new Intl.NumberFormat('es-NI',{style:'currency',currency:'USD'}).format(Number(v)||0);
 const date=v=>{if(!v)return '—';const d=new Date(v);return isNaN(d)?esc(v):d.toLocaleDateString('es-NI')};
 const rows=n=>(db[n]||[]).map(x=>({...x.data,_rowId:x.id}));
-document.querySelector('#nav').innerHTML=sections.map(([id,icon,label])=>`<button class="nav-item" data-section="${id}"><span>${icon}</span>${label}</button>`).join('');
+document.querySelector('#nav').innerHTML=sections.map(([id,icon,label])=>`<a class="nav-item" data-section="${id}" href="#${id}"><span>${icon}</span>${label}</a>`).join('');
 document.querySelector('#nav').addEventListener('click',e=>{const b=e.target.closest('[data-section]');if(b){location.hash=b.dataset.section;document.querySelector('.sidebar').classList.remove('open')}});
 document.querySelector('#menu').onclick=()=>document.querySelector('.sidebar').classList.toggle('open');
 document.querySelector('#download').onclick=()=>{const b=new Blob([JSON.stringify({capturado:new Date().toISOString(),tablas:db,contable_recuperado:contable},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='respaldo-nicauto-sis.json';a.click();URL.revokeObjectURL(a.href)};
